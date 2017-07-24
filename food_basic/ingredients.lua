@@ -18,7 +18,8 @@ food.module("wheat", function()
 	minetest.register_craftitem(":food:wheat", {
 		description = S("Wheat"),
 		inventory_image = "food_wheat.png",
-		groups = {food_wheat=1}
+		groups = {food_wheat=1},
+		spoil=60,
 	})
 
 	food.craft({
@@ -33,7 +34,8 @@ food.module("flour", function()
 	minetest.register_craftitem(":food:flour", {
 		description = S("Flour"),
 		inventory_image = "food_flour.png",
-		groups = {food_flour = 1}
+		groups = {food_flour = 1},
+		spoil=60,
 	})
 	food.craft({
 		output = "food:flour",
@@ -55,7 +57,8 @@ food.module("potato", function()
 	minetest.register_craftitem(":food:potato", {
 		description = S("Potato"),
 		inventory_image = "food_potato.png",
-		groups = {food_potato = 1}
+		groups = {food_potato = 1},
+		spoil=10,
 	})
 	food.craft({
 		output = "food:potato",
@@ -71,7 +74,8 @@ food.module("orange", function()
 	minetest.register_craftitem(":food:orange", {
 		description = S("Orange"),
 		inventory_image = "food_orange.png",
-		groups = {food_orange = 1}
+		groups = {food_orange = 1},
+		spoil=5,
 	})
 	food.craft({
 		output = "food:orange",
@@ -87,7 +91,8 @@ food.module("tomato", function()
 	minetest.register_craftitem(":food:tomato", {
 		description = S("Tomato"),
 		inventory_image = "food_tomato.png",
-		groups = {food_tomato = 1}
+		groups = {food_tomato = 1},
+		spoil=5,
 	})
 	food.craft({
 		output = "food:tomato",
@@ -104,7 +109,8 @@ food.module("carrot", function()
 		description = S("Carrot"),
 		inventory_image = "food_carrot.png",
 		groups = {food_carrot=1},
-		on_use = food.item_eat(3)
+		on_use = food.item_eat(3),
+		spoil=5,
 	})
 	food.craft({
 		output = "food:carrot",
@@ -120,7 +126,8 @@ food.module("milk", function()
 		image = "food_milk.png",
 		on_use = food.item_eat(1),
 		groups = { eatable=1, food_milk = 1 },
-		stack_max=10
+		stack_max=10,
+		spoil=3,
 	})
 	food.craft({
 		output = "food:milk",
@@ -136,7 +143,8 @@ food.module("egg", function()
 	minetest.register_craftitem(":food:egg", {
 		description = S("Egg"),
 		inventory_image = "food_egg.png",
-		groups = {food_egg=1}
+		groups = {food_egg=1},
+		spoil=8,
 	})
 	food.craft({
 		output = "food:egg",
@@ -152,7 +160,8 @@ food.module("cocoa", function()
 	minetest.register_craftitem(":food:cocoa", {
 		description = S("Cocoa Bean"),
 		inventory_image = "food_cocoa.png",
-		groups = {food_cocoa=1}
+		groups = {food_cocoa=1},
+		spoil=30,
 	})
 	food.craft({
 		output = "food:cocoa",
@@ -168,7 +177,8 @@ food.module("meat", function()
 	minetest.register_craftitem(":food:meat", {
 		description = S("Venison"),
 		inventory_image = "food_meat.png",
-		groups = {food_meat=1, food_chicken=1}
+		groups = {food_meat=1, food_chicken=1},
+		spoil=3,
 	})
 	food.craft({
 		type = "cooking",
@@ -199,7 +209,8 @@ food.module("sugar", function()
 	minetest.register_craftitem(":food:sugar", {
 		description = S("Sugar"),
 		inventory_image = "food_sugar.png",
-		groups = {food_sugar=1}
+		groups = {food_sugar=1},
+		spoil=200,
 	})
 
 	minetest.register_craft({
@@ -214,7 +225,8 @@ food.module("chocolate_powder", function()
 	minetest.register_craftitem(":food:chocolate_powder", {
 		description = S("Chocolate Powder"),
 		inventory_image = "food_chocolate_powder.png",
-		groups = {food_choco_powder = 1}
+		groups = {food_choco_powder = 1},
+		spoil=60,
 	})
 	food.craft({
 		output = "food:chocolate_powder 16",
@@ -230,7 +242,8 @@ food.module("pasta", function()
 	minetest.register_craftitem(":food:pasta",{
 		description = S("Pasta"),
 		inventory_image = "food_pasta.png",
-		groups = {food_pasta=1}
+		groups = {food_pasta=1},
+		spoil=60,
 	})
 	food.craft({
 		output = "food:pasta 4",
@@ -258,7 +271,8 @@ food.module("butter", function()
 	minetest.register_craftitem(":food:butter", {
 		description = S("Butter"),
 		inventory_image = "food_butter.png",
-		groups = {food_butter=1}
+		groups = {food_butter=1},
+		spoil=15,
 	})
 	food.craft({
 		output = "food:butter",
@@ -273,7 +287,8 @@ food.module("cheese", function()
 		description = S("Cheese"),
 		inventory_image = "food_cheese.png",
 		on_use = food.item_eat(4),
-		groups = {food_cheese=1}
+		groups = {food_cheese=1},
+		spoil=20,
 	})
 	food.craft({
 		output = "food:cheese",

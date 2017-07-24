@@ -193,7 +193,7 @@ function food.register(name, data, mod)
 			description = data.description,
 			inventory_image = data.inventory_image,
 			groups = data.groups,
-			on_use = data.on_use
+			on_use = data.on_use,
 		})
 	else
 		local newdata = {

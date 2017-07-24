@@ -25,7 +25,8 @@ food.module("dark_chocolate", function()
 		description = S("Dark Chocolate"),
 		inventory_image = "food_dark_chocolate.png",
 		on_use = food.item_eat(3),
-		groups = {food_dark_chocolate=1}
+		groups = {food_dark_chocolate=1},
+		spoil=60,
 	})
 	food.craft({
 		output = "food:dark_chocolate",
@@ -41,7 +42,8 @@ food.module("milk_chocolate", function()
 		description = S("Milk Chocolate"),
 		inventory_image = "food_milk_chocolate.png",
 		on_use = food.item_eat(3),
-		groups = {food_milk_chocolate=1}
+		groups = {food_milk_chocolate=1},
+		spoil=40,
 	})
 	food.craft({
 		output = "food:milk_chocolate",
@@ -58,6 +60,7 @@ food.module("baked_potato", function()
 		description = S("Baked Potato"),
 		inventory_image = "food_baked_potato.png",
 		on_use = food.item_eat(6),
+		spoil=2,
 	})
 	food.craft({
 		type = "cooking",
@@ -72,7 +75,8 @@ food.module("pasta_bake", function()
 		description = S("Pasta Bake"),
 		inventory_image = "food_pasta_bake.png",
 		on_use = food.item_eat(4),
-		groups = {food=3}
+		groups = {food=3},
+		spoil=2,
 	})
 	minetest.register_craftitem(":food:pasta_bake_raw",{
 		description = S("Raw Pasta Bake"),
@@ -109,12 +113,13 @@ for i=1, #soups do
 			description = S(flav[1].." Soup"),
 			inventory_image = "food_soup_"..flav[1]..".png",
 			on_use = food.item_eat(4),
-			groups = {food=3}
+			groups = {food=3},
+			spoil=2,
 		})
 		minetest.register_craftitem(":food:soup_"..flav[1].."_raw",{
 			description = S("Uncooked ".. flav[1].." Soup"),
 			inventory_image = "food_soup_"..flav[1].."_raw.png",
-
+			spoil=1,
 		})
 		food.craft({
 			type = "cooking",
@@ -142,6 +147,7 @@ for i=1, #juices do
 			description = S(flav.." Juice"),
 			inventory_image = "food_"..flav.."_juice.png",
 			on_use = food.item_eat(2),
+			spoil=3,
 		})
 		food.craft({
 			output = "food:"..flav.."_juice 4",
@@ -159,6 +165,7 @@ food.module("rainbow_juice", function()
 		description = S("Rainbow Juice"),
 		inventory_image = "food_rainbow_juice.png",
 		on_use = food.item_eat(20),
+		spoil=200,
 	})
 
 	food.craft({
@@ -198,7 +205,8 @@ food.module("cake", function()
 		sunlight_propagates = true,
 		drawtype="nodebox",
 		paramtype = "light",
-		node_box = food.cake_box
+		node_box = food.cake_box,
+		spoil=3,
 	})
 	food.craft({
 		type = "cooking",
@@ -236,7 +244,8 @@ food.module("cake_choco", function()
 		sunlight_propagates = true,
 		drawtype="nodebox",
 		paramtype = "light",
-		node_box = food.cake_box
+		node_box = food.cake_box,
+		spoil=3,
 	})
 	food.craft({
 		type = "cooking",
@@ -247,6 +256,7 @@ food.module("cake_choco", function()
 	minetest.register_craftitem(":food:cakemix_choco",{
 		description = S("Chocolate Cake Mix"),
 		inventory_image = "food_cakemix_choco.png",
+		spoil=15,
 	})
 	food.craft({
 		output = "food:cakemix_choco",
@@ -274,7 +284,8 @@ food.module("cake_carrot", function()
 		},
 		drawtype="nodebox",
 		paramtype = "light",
-		node_box = food.cake_box
+		node_box = food.cake_box,
+		spoil=3,
 	})
 	food.craft({
 		type = "cooking",
